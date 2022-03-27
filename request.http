@@ -1,4 +1,16 @@
 ### Get request
 GET http://localhost:8000/api/goals HTTP/1.0
 
+### create a new goal
+POST http://localhost:8000/api/goals HTTP/1.0
+content-type: application/json
+
+{
+    "text": "I am a new goal"
+}
+
+### update a goal
+PUT http://localhost:8000/api/goals/123 HTTP/1.0
  
+### delete a goal
+DELETE  http://localhost:8000/api/goals/123 HTTP/1.0

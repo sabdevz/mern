@@ -7,12 +7,14 @@ const {
 
 const router = express.Router();
 
+const { protectRoute } = require('../middleware/authMiddleware');
+
 // Register a user
 router.post('/', registerUser);
 
 router.post('/login', loginUser);
 
 // Get a list of users
-router.get('/me', getAllUsers);
+router.get('/me', protectRoute, getAllUsers);
 
 module.exports = router;
